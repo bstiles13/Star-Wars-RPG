@@ -22,6 +22,7 @@ $(document).ready(function() {
     	$("#ewok").attr("value", ewokLife);
     	$("#jawa").attr("value", jawaLife);
     	$("#sith").attr("value", sithLife);
+    	$("img").css("border", "5px solid lime");
     	console.log($("#jedi").attr("value"));
     }
 
@@ -33,6 +34,7 @@ $(document).ready(function() {
             $(this).hide();
             choiceLife = parseInt($(this).attr("value"));
             $("#result").empty();
+            $("img", ".choose").css("border", "5px solid red");
             chooseToggle = true;
 
         } else if (chooseToggle === true) {
@@ -46,7 +48,7 @@ $(document).ready(function() {
     })
 
     $("#attack").on("click", function() {
-    	attack = Math.floor(Math.random() * 80);
+    	attack = Math.floor(Math.random() * 90);
     	enemyLife -= attack;
     	$("span", ".enemy").find("h6").html("Health: " + enemyLife);
     	$("#result").append('<span id="give">You attacked ' + $("span", ".enemy").find("h3").text() + ' for ' + attack + ' damage.</span><br>');
@@ -60,7 +62,7 @@ $(document).ready(function() {
     			reset();
     		}
     	} else {
-    		attack = Math.floor(Math.random() * 1);
+    		attack = Math.floor(Math.random() * 30);
     		choiceLife -= attack;
     		$("span", ".choice").find("h6").html("Health: " + choiceLife);
     		if (choiceLife <= 0) {
