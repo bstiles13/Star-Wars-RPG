@@ -1,0 +1,53 @@
+* {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+img {
+	height: 200px;
+	width: 200px;
+	display: block;
+	border-radius: 40%;
+}
+
+body {
+	background-image: url("../images/background.jpg");
+	background-size: cover;
+	background-position: 350px -50px;
+}
+
+.choose, .choice, .enemy {
+	color: white;
+	border: 3px solid yellow;
+	padding: 5px;
+	margin: 5px;
+	display: inline-block;
+	min-width: 200px;
+	min-height: 200px;
+	background-color: black;
+	vertical-align: top;
+}
+
+span {
+	display: inline-block;
+	text-align: center;
+	color: orange;
+	font-weight: bolder;
+}
+
+#result {
+	margin-top: 10px;
+}
+
+#give {
+	color: aqua;
+}
+
+#take {
+	color: red;
+}
+
+#next {
+	vertical-align: top;
+	margin-left: 50px;
+	margin-top: 10px;
+}
