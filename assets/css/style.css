@@ -17,7 +17,7 @@ img {
 body {
 	background-image: url("../images/background.jpg");
 	background-size: cover;
-	background-position: 350px -50px;
+	background-position: 350px -85px;
 }
 
 .choose, .choice, .enemy {
@@ -55,4 +55,42 @@ span {
 	vertical-align: top;
 	margin-left: 50px;
 	margin-top: 10px;
+}
+
+.btn {
+	margin: 20px 0 0 35px;
+}
+
+#win {
+	background-color: black;
+	text-align: center;
+	font-size: 40px;
+	color: lemonchiffon;
+	position: fixed;
+	display: inline-block;
+	top: 10%;
+	left: 15%;
+}
+
+#win img {
+	border-radius: 1%;
+	height: 400px;
+	width: auto;
+}
+
+#lose {
+	background-color: black;
+	text-align: center;
+	font-size: 40px;
+	color: lemonchiffon;
+	position: fixed;
+	display: inline-block;
+	top: 10%;
+	left: 15%;
+}
+
+#lose img {
+	border-radius: 1%;
+	height: 400px;
+	width: auto;
 }

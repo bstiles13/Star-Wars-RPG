@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var jediLife = 100;
 	var ewokLife = 100;
 	var jawaLife = 140;
+	var salaciousLife = 160;
 	var sithLife = 180;
 
 	var choiceLife = 0;
@@ -21,8 +22,13 @@ $(document).ready(function() {
     	$("#jedi").attr("value", jediLife);
     	$("#ewok").attr("value", ewokLife);
     	$("#jawa").attr("value", jawaLife);
+    	$("#salacious").attr("value", salaciousLife);
     	$("#sith").attr("value", sithLife);
-    	$("img").css("border", "5px solid lime");
+    	$("img", ".choose").css("border", "5px solid lime");
+    	$("audio").hide();
+    	$("#win").hide();
+    	$("#lose").hide();
+    	$("#attack").prop("disabled", true);
     	console.log($("#jedi").attr("value"));
     }
 
@@ -43,6 +49,7 @@ $(document).ready(function() {
             enemyLife = parseInt($(this).attr("value"));
             $("#result").empty();
             $("#next").empty();
+            $("#attack").prop("disabled", false);
             chooseToggle = undefined;
         }
     })
@@ -55,19 +62,22 @@ $(document).ready(function() {
     	if (enemyLife <= 0) {
     		$("#next").append("You defeated " + $("span", ".enemy").find("h3").text() + ". Choose your next opponent.");
     		$("span", ".enemy").empty();
+    		$("#attack").prop("disabled", true);
     		chooseToggle = true;
     		enemiesDefeated++;
-    		if (enemiesDefeated === 3) {
-    			alert("You won Star Wars!");
+    		if (enemiesDefeated === 4) {
     			reset();
+    			$("#win").show();
+				setTimeout(function() { $("#win").hide(); }, 2700);
     		}
     	} else {
-    		attack = Math.floor(Math.random() * 30);
+    		attack = Math.floor(Math.random() * 20);
     		choiceLife -= attack;
     		$("span", ".choice").find("h6").html("Health: " + choiceLife);
     		if (choiceLife <= 0) {
-    			alert("You got your butt kicked by " + $("span", ".enemy").find("h3").text());
     			reset();
+    			$("#lose").show();
+				setTimeout(function() { $("#lose").hide(); }, 2000);
     		} else {
     			$("#result").append('<span id="take">' + $("span", ".enemy").find("h3").text() + ' attacked you for ' + attack + ' damage.</span><br>');
     		}
@@ -83,6 +93,7 @@ $(document).ready(function() {
     jediLife = 100;
 	ewokLife = 100;
 	jawaLife = 140;
+	salaciousLife = 160;
 	sithLife = 180;
 
 	choiceLife = 0;
@@ -98,9 +109,9 @@ $(document).ready(function() {
     enemiesDefeated = 0;
 
     $("#result").empty();
+    $("#next").empty();
 
     start();
     }
 
-    $("audio").hide();
 });
