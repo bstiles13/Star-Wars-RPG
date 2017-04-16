@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
-	var jediLife = 100;
-	var ewokLife = 100;
-	var jawaLife = 140;
-	var salaciousLife = 160;
+	var jediLife = 120;
+	var ewokLife = 80;
+	var jawaLife = 100;
+	var salaciousLife = 140;
 	var sithLife = 180;
 
 	var choiceLife = 0;
@@ -17,13 +17,15 @@ $(document).ready(function() {
     var thatEnemy;
 
     var enemiesDefeated = 0;
+    var wins = 0;
+    var losses = 0;
 
     function start() {
-    	$("#jedi").attr("value", jediLife);
-    	$("#ewok").attr("value", ewokLife);
-    	$("#jawa").attr("value", jawaLife);
-    	$("#salacious").attr("value", salaciousLife);
-    	$("#sith").attr("value", sithLife);
+    	$("#jedi").attr("value", jediLife).find("h6").html("Health : " + jediLife);
+    	$("#ewok").attr("value", ewokLife).find("h6").html("Health : " + ewokLife);
+    	$("#jawa").attr("value", jawaLife).find("h6").html("Health : " + jawaLife);
+    	$("#salacious").attr("value", salaciousLife).find("h6").html("Health : " + salaciousLife);
+    	$("#sith").attr("value", sithLife).find("h6").html("Health : " + sithLife);
     	$("img", ".choose").css("border", "5px solid lime");
     	$("audio").hide();
     	$("#win").hide();
@@ -66,15 +68,19 @@ $(document).ready(function() {
     		chooseToggle = true;
     		enemiesDefeated++;
     		if (enemiesDefeated === 4) {
+    			wins++;
+    			$("#wins").html("Wins: " + wins);
     			reset();
     			$("#win").show();
 				setTimeout(function() { $("#win").hide(); }, 2700);
     		}
     	} else {
-    		attack = Math.floor(Math.random() * 20);
+    		attack = Math.floor(Math.random() * 30);
     		choiceLife -= attack;
     		$("span", ".choice").find("h6").html("Health: " + choiceLife);
     		if (choiceLife <= 0) {
+    			losses++;
+    			$("#losses").html("Losses: " + losses);
     			reset();
     			$("#lose").show();
 				setTimeout(function() { $("#lose").hide(); }, 2000);
@@ -90,10 +96,10 @@ $(document).ready(function() {
     $("span", ".choose").show();
     $("span", ".choice").empty();
     $("span", ".enemy").empty();
-    jediLife = 100;
-	ewokLife = 100;
-	jawaLife = 140;
-	salaciousLife = 160;
+    jediLife = 120;
+	ewokLife = 80;
+	jawaLife = 100;
+	salaciousLife = 140;
 	sithLife = 180;
 
 	choiceLife = 0;

@@ -18,7 +18,7 @@ img {
 body {
 	background-image: url("../images/background.jpg");
 	background-size: cover;
-	background-position: 350px -85px;
+	background-position: 350px -50px;
 }
 
 .choose, .choice, .enemy {
@@ -38,6 +38,19 @@ span {
 	text-align: center;
 	color: orange;
 	font-weight: bolder;
+}
+
+#score {
+	float: right;
+	margin-top: 20px;
+	margin-right: 30px;
+	font-size: 25px;
+}
+
+#wins, #losses {
+	margin: 0 10px;
+	color: lemonchiffon;
+	font-family: Tahoma, Geneva, sans-serif;
 }
 
 #result {
