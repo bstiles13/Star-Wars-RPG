@@ -19,6 +19,7 @@ body {
 	background-image: url("../images/background.jpg");
 	background-size: cover;
 	background-position: 350px -50px;
+	background-repeat: repeat-x;
 }
 
 .choose, .choice, .enemy {
