@@ -122,3 +122,20 @@ span {
 	height: 400px;
 	width: auto;
 }
+
+#run {
+	background-color: black;
+	text-align: center;
+	font-size: 40px;
+	color: lemonchiffon;
+	position: fixed;
+	display: inline-block;
+	top: 10%;
+	left: 15%;
+}
+
+#run img {
+	border-radius: 1%;
+	height: 400px;
+	width: auto;
+}

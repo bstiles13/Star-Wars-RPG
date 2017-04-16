@@ -39,6 +39,13 @@ $(document).ready(function() {
                 }, 2000);
     }
 
+    function escapeGif() {
+    	$("#run").show();
+        setTimeout(function() {
+            $("#run").hide();
+                }, 3000);
+    }
+
     function start() {
         $("#jedi").attr("value", jediLife).find("h6").html("Health : " + jediLife);
         $("#ewok").attr("value", ewokLife).find("h6").html("Health : " + ewokLife);
@@ -49,6 +56,7 @@ $(document).ready(function() {
         $("audio").hide();
         $("#win").hide();
         $("#lose").hide();
+        $("#run").hide();
         $("#attack").prop("disabled", true);
         $("#escape").prop("disabled", true);
         console.log($("#jedi").attr("value"));
@@ -120,11 +128,10 @@ $(document).ready(function() {
     		reset();
     		loseGif();
     	} else if (winLose === 1) {
-    		wins++;
-    		$("#wins").html("Wins: " + wins);
     		reset();
-    		winGif();
+    		escapeGif();
     	}
+    	console.log(winLose);
     });
 
 
