@@ -25,6 +25,20 @@ $(document).ready(function() {
     var wins = 0;
     var losses = 0;
 
+    function winGif() {
+    	$("#win").show();
+        setTimeout(function() {
+            $("#win").hide();
+                }, 2700);
+    }
+
+    function loseGif() {
+    	$("#lose").show();
+        setTimeout(function() {
+            $("#lose").hide();
+                }, 2000);
+    }
+
     function start() {
         $("#jedi").attr("value", jediLife).find("h6").html("Health : " + jediLife);
         $("#ewok").attr("value", ewokLife).find("h6").html("Health : " + ewokLife);
@@ -36,6 +50,7 @@ $(document).ready(function() {
         $("#win").hide();
         $("#lose").hide();
         $("#attack").prop("disabled", true);
+        $("#escape").prop("disabled", true);
         console.log($("#jedi").attr("value"));
     }
 
@@ -58,6 +73,7 @@ $(document).ready(function() {
             $("#result").empty();
             $("#next").empty();
             $("#attack").prop("disabled", false);
+            $("#escape").prop("disabled", false);
             chooseToggle = undefined;
         }
     })
@@ -71,16 +87,14 @@ $(document).ready(function() {
             $("#next").append("You defeated " + $("span", ".enemy").find("h3").text() + ". Choose your next opponent.");
             $("span", ".enemy").empty();
             $("#attack").prop("disabled", true);
+            $("#escape").prop("disabled",true);
             chooseToggle = true;
             enemiesDefeated++;
             if (enemiesDefeated === 4) {
                 wins++;
                 $("#wins").html("Wins: " + wins);
                 reset();
-                $("#win").show();
-                setTimeout(function() {
-                    $("#win").hide();
-                }, 2700);
+                winGif();
             }
         } else {
             attack = Math.floor(Math.random() * 30);
@@ -90,16 +104,29 @@ $(document).ready(function() {
                 losses++;
                 $("#losses").html("Losses: " + losses);
                 reset();
-                $("#lose").show();
-                setTimeout(function() {
-                    $("#lose").hide();
-                }, 2000);
+                loseGif();
             } else {
                 $("#result").append('<span id="take">' + $("span", ".enemy").find("h3").text() + ' attacked you for ' + attack + ' damage.</span><br>');
             }
         }
         console.log(enemiesDefeated);
     })
+
+    $("#escape").on("click", function() {
+    	var winLose = Math.floor(Math.random() * 2);
+    	if (winLose === 0) {
+    		losses++;
+    		$("#losses").html("Losses: " + losses);
+    		reset();
+    		loseGif();
+    	} else if (winLose === 1) {
+    		wins++;
+    		$("#wins").html("Wins: " + wins);
+    		reset();
+    		winGif();
+    	}
+    });
+
 
     function reset() {
 

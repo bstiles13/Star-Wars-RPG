@@ -9,8 +9,8 @@ h2 {
 }
 
 img {
-	height: 200px;
-	width: 200px;
+	height: 180px;
+	width: 180px;
 	display: block;
 	border-radius: 40%;
 }
@@ -39,6 +39,15 @@ span {
 	text-align: center;
 	color: orange;
 	font-weight: bolder;
+}
+
+.buttons div {
+	color: white;
+	font-size: 10px;
+	font-weight: normal;
+	margin-left: 10px;
+	max-width: 200px;
+	margin-left: 35px;
 }
 
 #score {
@@ -77,6 +86,7 @@ span {
 
 .btn {
 	margin: 20px 0 0 35px;
+	vertical-align: top;
 }
 
 #win {
