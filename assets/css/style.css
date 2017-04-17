@@ -67,13 +67,15 @@ span {
 
 .reset {
 	text-align: right;
-	margin: 20px 10px 0 0;
+	margin: 10px 10px 0 0;
 }
 
 .reset input {
+	font-weight: bold;
 	border-radius: 10%;
-	background-color: lightgray;
-	color: dodgerblue;
+	background-color: black;
+	color: tomato;
+	border: 1px solid lemonchiffon;
 }
 
 #result {
