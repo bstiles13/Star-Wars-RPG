@@ -65,6 +65,17 @@ span {
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
+.reset {
+	text-align: right;
+	margin: 20px 10px 0 0;
+}
+
+.reset input {
+	border-radius: 10%;
+	background-color: lightgray;
+	color: dodgerblue;
+}
+
 #result {
 	margin-top: 20px;
 	margin-left: 20px;

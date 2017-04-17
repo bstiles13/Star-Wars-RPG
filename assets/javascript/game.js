@@ -134,6 +134,14 @@ $(document).ready(function() {
     	console.log(winLose);
     });
 
+    $("input", ".reset").on("click", function() {
+    	wins = 0;
+    	$("#wins").html("Wins: " + wins);
+    	losses = 0;
+    	$("#losses").html("Losses: " + losses);
+    	reset();
+    })
+
 
     function reset() {
 
